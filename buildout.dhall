@@ -1,6 +1,9 @@
-let versions = ./versions.dhall
+let Versions = (./types.dhall).Versions
 
-    in  { `buildout.cfg` = (./template/buildout.cfg) versions
-        , Makefile = ./template/Makefile as Text
-        , justfile = ./template/justfile as Text
-        }
+in  { render =
+        λ(versions : Versions) →
+          { `buildout.cfg` = ./template/buildout.cfg versions
+          , Makefile = ./template/Makefile as Text
+          , justfile = ./template/justfile as Text
+          }
+    }
