@@ -14,4 +14,7 @@ buildout:
 clean:
         rm -rf bin/ lib/ include/
 
+# generate again from dhall
+dhall:
+	dhall to-directory-tree --file .dhall/init.dhall --output .
 # vim: set ft=make :
