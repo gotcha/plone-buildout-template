@@ -1,0 +1,8 @@
+let types = ../types.dhall in
+\(versions : types.Versions) ->
+''
+${types.render_requirement {package = "setuptools", version = versions.setuptools} }
+${types.render_requirement {package = "pip", version = versions.pip} }
+${types.render_requirement {package = "wheel", version =versions.wheel} }
+${types.render_requirement {package = "zc.buildout", version = versions.buildout} }
+''

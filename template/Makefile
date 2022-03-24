@@ -6,7 +6,7 @@ bin/pip:
 	virtualenv .
 
 bin/buildout: bin/pip
-	bin/pip install zc.buildout==3.0.0a1
+	bin/pip install -r requirements.txt
 	touch bin/buildout
 
 GIT_DIFF=git diff && test -z $$(git ls-files -o) || printf "\nUntracked files\n\n" git ls-files -o
