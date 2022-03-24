@@ -1,9 +1,12 @@
+let types = ../types.dhall in
+\(versions : types.Versions) ->
+''
 bin/instance: bin/buildout buildout.cfg
 	bin/buildout -Nv
 	touch bin/instance
 
 bin/pip:
-	virtualenv .
+	virtualenv-${types.render_python versions.python} .
 
 bin/buildout: bin/pip
 	bin/pip install -r requirements.txt
@@ -23,3 +26,4 @@ check: update
 		    git clean -fd >/dev/null 2>&1 && \
 		    git checkout . >/dev/null 2>&1 && \
 		    echo "Need to update" && false)
+''
