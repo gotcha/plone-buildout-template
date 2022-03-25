@@ -1,5 +1,7 @@
 let types = ../types.dhall in
+
 \(versions : types.Versions) ->
+
 ''
 bin/instance: bin/buildout buildout.cfg
 	bin/buildout -Nv
