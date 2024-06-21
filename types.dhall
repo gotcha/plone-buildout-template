@@ -3,7 +3,8 @@ let Version = Optional Text
 let PythonVersion = < Python27 | Python37 | Python38 | Python39 | Python310 | Python311 | Python312 | Python313 >
 
 let Versions =
-        { python : PythonVersion
+        { eggs : Text
+        , python : PythonVersion
         , plone : Text
         , setuptools : Version
         , pip : Version
