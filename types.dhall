@@ -1,6 +1,6 @@
 let Version = Optional Text
 
-let PythonVersion = < Python27 | Python37 | Python38 | Python39 | Python310 >
+let PythonVersion = < Python27 | Python37 | Python38 | Python39 | Python310 | Python311 | Python312 | Python313 >
 
 let Versions =
         { python : PythonVersion
@@ -19,6 +19,9 @@ let render_python =
           , Python38 = "3.8"
           , Python39 = "3.9"
           , Python310 = "3.10"
+          , Python311 = "3.11"
+          , Python312 = "3.12"
+          , Python313 = "3.13"
           }
           version
 
