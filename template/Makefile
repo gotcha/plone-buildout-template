@@ -8,7 +8,7 @@ bin/instance: bin/buildout buildout.cfg
 	touch bin/instance
 
 bin/pip:
-	virtualenv-${types.render_python versions.python} .
+	python${types.render_python versions.python} -m venv .
 
 bin/uv: bin/pip
 	bin/pip install uv
