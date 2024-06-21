@@ -10,8 +10,11 @@ bin/instance: bin/buildout buildout.cfg
 bin/pip:
 	virtualenv-${types.render_python versions.python} .
 
-bin/buildout: bin/pip
-	bin/pip install -r requirements.txt
+bin/uv: bin/pip
+	bin/pip install uv
+
+bin/buildout: bin/uv requirements.txt
+	bin/uv pip install -r requirements.txt
 	touch bin/buildout
 
 GIT_DIFF=git diff && test -z $$(git ls-files -o) || printf "\nUntracked files\n\n" git ls-files -o
